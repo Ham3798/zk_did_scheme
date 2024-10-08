@@ -5,7 +5,7 @@ This project extends the existing Verifiable Credential (VC) scheme that uses ED
 The scheme leverages zk-SNARK technology to perform attribute verification securely and efficiently while ensuring user privacy. While similar to the traditional EDDSA2018, this scheme operates on the BabyJubJub curve, offering lighter signature processing and improved interoperability. It is particularly focused on improving the interoperability of hardware-mapped VC documents in a DID environment.
 
 ## Example Verifiable Credential
-Here is an example of a Verifiable Credential (VC) issued by Chungnam National University Information Security Lab:
+Here is an example of a Verifiable Credential (VC) example:
 ```json
 {
   "@context": [
