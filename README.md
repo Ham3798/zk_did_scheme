@@ -1,1 +1,4 @@
 # zk_did_scheme
+This project extends the existing Verifiable Credential (VC) scheme that uses EDDSA2018 signatures by proposing a new signature scheme combining BabyJubJub-based EDDSA signatures and Sparse Merkle Tree (SMT). The primary goal of this system is to allow credential verification to be conducted externally using a zk-SNARK-based verification mechanism, thereby eliminating the dependency on trust in the issuer. This enables verification to be performed independently, enhancing decentralization and reducing reliance on centralized trust.
+
+The scheme leverages zk-SNARK technology to perform attribute verification securely and efficiently while ensuring user privacy. While similar to the traditional EDDSA2018, this scheme operates on the BabyJubJub curve, offering lighter signature processing and improved interoperability. It is particularly focused on improving the interoperability of hardware-mapped VC documents in a DID environment.
