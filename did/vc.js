@@ -127,7 +127,7 @@ async function generateVC() {
     proof: {
       type: 'BabyJubJubSMTSignature2024',
       created: new Date().toISOString(),
-      proofPurpose: 'assertionMethod',
+      proofPurpose: 'verificationMethod',
       verificationMethod: didDocument.issuer.id,
       merkleRoot: tree.root.toString(),
       signature: {
