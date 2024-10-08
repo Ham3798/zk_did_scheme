@@ -59,3 +59,5 @@ Here is an example of a Verifiable Credential (VC) issued by Chungnam National U
 * EdDSA Signature Verification: An EdDSA signature verifier checks the issuer’s signature against the Merkle root hash, ensuring that the root hash was signed by the issuer’s public key and proving the authenticity of the credential.
 
 * Attribute Validation: Specifically for the age attribute, a comparator is used to check whether the value from the SMT proof is greater than or equal to 25, enforcing an age requirement as part of the credential validation.
+
+
