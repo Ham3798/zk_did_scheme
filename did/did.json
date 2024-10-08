@@ -1,0 +1,27 @@
+{
+    "@context": [
+      "https://www.w3.org/2018/credentials/v1",
+      "https://www.example.org/examples/v1"
+    ],
+    "id": "http://chungnam.ac.kr/credentials/3732",
+    "type": [
+      "VerifiableCredential",
+      "AlumniCredential"
+    ],
+    "issuer": {
+      "id": "https://infosec.chungnam.ac.kr",
+      "name": "Chungnam National University Information Security Lab"
+    },
+    "issuanceDate": "2024-02-11T09:30:24Z",
+    "credentialSubject": {
+      "id": "did:example:abcdef1234567890",
+      "name": "ham3798",
+      "age": 25,
+      "studentNumber": "201902769",
+      "alumniOf": {
+        "id": "did:example:c34fb4561237890",
+        "name": "Chungnam National University",
+        "department": "Information Security Lab"
+      }
+    }
+  }

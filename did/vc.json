@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    "https://www.example.org/examples/v1"
+  ],
+  "id": "http://chungnam.ac.kr/credentials/3732",
+  "type": [
+    "VerifiableCredential",
+    "AlumniCredential"
+  ],
+  "issuer": {
+    "id": "https://infosec.chungnam.ac.kr",
+    "name": "Chungnam National University Information Security Lab",
+    "publicKey": {
+      "Ax": "13277427435165878497778222415993513565335242147425444199013288855685581939618",
+      "Ay": "13622229784656158136036771217484571176836296686641868549125388198837476602820"
+    }
+  },
+  "issuanceDate": "2024-02-11T09:30:24Z",
+  "credentialSubject": {
+    "id": "did:example:abcdef1234567890",
+    "name": "ham3798",
+    "age": 25,
+    "studentNumber": "201902769",
+    "alumniOf": {
+      "id": "did:example:c34fb4561237890",
+      "name": "Chungnam National University",
+      "department": "Information Security Lab"
+    }
+  },
+  "proof": {
+    "type": "BabyJubJubPoseidonSignature2024",
+    "created": "2024-10-08T05:59:43.348Z",
+    "proofPurpose": "assertionMethod",
+    "verificationMethod": "https://infosec.chungnam.ac.kr",
+    "merkleRoot": "176,113,248,159,95,186,151,221,221,94,150,40,177,156,132,61,209,46,57,221,176,188,79,122,39,33,214,72,77,255,225,5",
+    "signature": {
+      "R8x": "14843327923499602530760840822364653819560149483324056861844414827173045711128",
+      "R8y": "16624741311753369209800270717954129820251768033844592664257222687029635194829",
+      "S": "2003340101055013093731532733602979271886157286292523269931749695412007991258"
+    }
+  }
+}
