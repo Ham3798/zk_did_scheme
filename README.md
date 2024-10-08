@@ -40,7 +40,7 @@ Here is an example of a Verifiable Credential (VC) example:
   "proof": {
     "type": "BabyJubJubSMTSignature2024",
     "created": "2024-10-08T05:59:43.348Z",
-    "proofPurpose": "assertionMethod",
+    "proofPurpose": "verificationMethod",
     "verificationMethod": "https://infosec.chungnam.ac.kr",
     "merkleRoot": "176,113,248,159,95,186,151,221,221,94,150,40,177,156,132,61,209,46,57,221,176,188,79,122,39,33,214,72,77,255,225,5",
     "signature": {
