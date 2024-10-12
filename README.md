@@ -1,11 +1,20 @@
 # Verifiable Credential Scheme with BabyJubJub-based zk-SNARK and SMT
-This project extends the existing Verifiable Credential (VC) scheme that uses EDDSA2018 signatures by proposing a new signature scheme combining BabyJubJub-based EDDSA signatures and Sparse Merkle Tree (SMT). 
-**The primary goal of this system is to allow credential verification to be conducted externally using a zk-SNARK-based verification mechanism, thereby eliminating all dependencies except for trust in the issuer.** This enables verification to be performed independently, enhancing decentralization and reducing reliance on centralized trust.
 
-The scheme leverages zk-SNARK technology to perform attribute verification securely and efficiently while ensuring user privacy. While similar to the traditional EDDSA2018, this scheme operates on the BabyJubJub curve, offering lighter signature processing and improved interoperability. It is particularly focused on improving the interoperability of hardware-mapped VC documents in a DID environment.
+This project introduces the **BabyJubJubSMTSignature2024** Verifiable Credential (VC) scheme, which leverages Sparse Merkle Trees (SMT) and BabyJubJub-based signatures. This scheme enhances the traditional Verifiable Credential approach by incorporating the privacy-preserving and efficient verification features of zk-SNARKs, allowing for external credential verification without dependence on centralized entities or intermediaries.
+
+The BabyJubJubSMTSignature2024 scheme is highly flexible, enabling the definition of various Verifiable Presentation (VP) schemes in Circom based on SMT structures. This approach supports the creation of custom verification logic for different attributes of credentials, offering improved scalability and interoperability in decentralized systems.
+
+**The goal is to eliminate all trust dependencies except for the issuer and to establish a system that can also be used in smart contracts.**
+
+### Key Features:
+- **zk-SNARK-based Verification**: Efficient and privacy-preserving verification of credentials without revealing the underlying data.
+- **SMT-based Attribute Verification**: Ensures that the attributes (e.g., age, university affiliation) are securely stored and verified in a Merkle tree structure.
+- **BabyJubJub Signature**: Uses the lightweight BabyJubJub elliptic curve for signature verification, optimized for zk-SNARK applications.
+- **Flexible VP Scheme Definition**: Supports defining multiple Verifiable Presentation schemes for different verification scenarios.
 
 ## Example Verifiable Credential
-Here is an example of a Verifiable Credential (VC) example:
+Below is an example of a Verifiable Credential (VC) using the BabyJubJubSMTSignature2024 scheme:
+
 ```json
 {
   "@context": [
@@ -51,13 +60,21 @@ Here is an example of a Verifiable Credential (VC) example:
   }
 }
 ```
+### Circuit Explanation (Example of a VP Scheme)
+The following explains one possible Verifiable Presentation (VP) scheme using the BabyJubJubSMTSignature2024:
 
-## explanation of the example circuit:
+- SMT Inclusion Proof: Each attribute (e.g., age, alumniOf, name) is verified by a separate SMT verifier, ensuring that the provided attribute values are part of the Merkle tree using the root hash as a reference.
 
-* SMT Inclusion Proofs : The circuit includes separate SMT verifiers for each attribute—age, alumniOf, and name. These verifiers ensure that the given attribute values are valid and part of the Merkle tree, using the root hash as a reference.
+- EdDSA Signature Verification: The issuer’s signature over the Merkle root hash is verified using EdDSA. This proves that the root hash, which represents the credential's attributes, was signed by the issuer’s public key, ensuring the authenticity of the credential.
 
-* EdDSA Signature Verification: An EdDSA signature verifier checks the issuer’s signature against the Merkle root hash, ensuring that the root hash was signed by the issuer’s public key and proving the authenticity of the credential.
+- Attribute Validation: Specifically for the age attribute, the circuit includes a comparator that checks whether the age in the SMT proof is greater than or equal to 25, enforcing an age requirement as part of the credential validation.
 
-* Attribute Validation: Specifically for the age attribute, a comparator is used to check whether the value from the SMT proof is greater than or equal to 25, enforcing an age requirement as part of the credential validation.
+## Usage and Applications:
+This scheme can be used in various decentralized applications (DApps) that require secure, scalable, and privacy-preserving verification of credentials, such as identity verification, proof of age, or university affiliation. By using zk-SNARK and SMT-based structures, it reduces the need for centralized verification authorities, making it an ideal solution for decentralized identity (DID) systems and blockchain-based ecosystems.
+
+## License
+This project is open-sourced under the MIT License. Feel free to use, modify, and distribute it for personal or commercial use.
+
+
 
 
