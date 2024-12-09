@@ -1,5 +1,6 @@
 # Ledger-Free Decentralized Identifier (DID) Authentication Scheme
 
+논문 작성중에 있습니다.
 논문(미완) 초안: https://satisfying-scorpio-da7.notion.site/zk-Embedded-Authentication-1-1575e32c595580409254de94a76dfa2b?pvs=4
 
 ## Abstract
